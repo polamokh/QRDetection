@@ -32,6 +32,9 @@ function qr_img = detect_qr(img)
         if(is_right_rotation(locations))
             break;
         else
+            if(rotat > 360)
+                break;
+            end
             rotat = rotat + get_rotation_angle(locations);
         end
     end
